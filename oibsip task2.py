@@ -1,24 +1,17 @@
-def calculate_bmi(weight, height):
-    bmi = weight / (height ** 2)
-    return bmi
-
-def classify_bmi(bmi):
-    if bmi < 18.5:
-        return "Underweight"
-    elif 18.5 <= bmi < 24.9:
-        return "Normal weight"
-    elif 25.0 <= bmi < 29.9:
-        return "Overweight"
-    else:
-        return "Obese"
-
-def main():
-    weight = float(input("Enter your weight in kilograms: "))
-    height = float(input("Enter your height in meters: "))
-    bmi = calculate_bmi(weight, height)
-    category = classify_bmi(bmi)
-    print(f"\nBMI: {bmi:.2f}")
-    print(f"Category: {category}")
-
-if __name__ == "__main__":
-    main()
+import random
+def dice_roll(dice, sides):
+  roll = []
+  for i in range(0,dice):
+    face = random.randint(1,sides)
+    roll.append(face)
+  return roll
+dice = int(input("Dice: "))
+if (dice <= 0):
+  print("Must have at least one dice!")
+  quit()
+sides = int(input("Sides: "))
+if (sides <= 0):
+  print("Must have at least one side!")
+  quit()
+roll = dice_roll(dice, sides)
+print(roll)
